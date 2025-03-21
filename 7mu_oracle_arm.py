@@ -115,7 +115,7 @@ class FileParser:
 
         # print("硬盘大小", self.boot_volume_size_in_gbs)
         # 读取密钥
-        ssh_rsa_pat = re.compile('"ssh_authorized_keys" = "(.*)"')
+        ssh_rsa_pat = re.compile('ssh_authorized_keys = "(.*)"')
         try:
             self.ssh_authorized_keys = ssh_rsa_pat.findall(self._filebuf).pop()
         except Exception as e:
@@ -123,7 +123,7 @@ class FileParser:
 
     @property
     def ssh_authorized_keys(self):
-        self._sshkey
+        return self._sshkey
 
     @ssh_authorized_keys.setter
     def ssh_authorized_keys(self, key):
