@@ -270,6 +270,8 @@ class InsCreate:
             finally:
                 self.try_count += 1
                 print("抢注中，已经经过:{}尝试".format(self.try_count))
+                if self.try_count % 10 == 0:
+                    telegram(f"🐢 已经尝试{self.try_count}次，请求间隔时间{self.sleep_time}，脚本还在运行中！")
 
     def check_public_ip(self):
 
